@@ -1,0 +1,8 @@
+node_modules/
+
+csvfiles/500mb.csv
+csvfiles/1.csv
+
+output.json
+output-50mb.json
+output-500mb.json

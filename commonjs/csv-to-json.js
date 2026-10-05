@@ -1,35 +1,3 @@
-// import fs from "node:fs";
-// import { Transform } from "node:stream";
-// import { pipeline } from "node:stream/promises";
-
-// const inputFile = "./csvfiles/1.csv";
-// const outputFile = "./output.json";
-
-// const csvToJson = new Transform({
-//   transform(chunk, encoding, callback) {
-//     const data = chunk.toString();
-
-//     console.log("Received chunk:", data.length, "bytes");
-
-//     callback();
-//   }
-// });
-
-// try {
-//   await pipeline(
-//     fs.createReadStream(inputFile),
-//     csvToJson,
-//     fs.createWriteStream(outputFile)
-//   );
-
-//   console.log("Done!");
-// } catch (error) {
-//   console.error("Error:", error.message);
-// }
-
-
-
-
 import fs from "node:fs";
 import { Transform } from "node:stream";
 import { pipeline } from "node:stream/promises";
@@ -48,13 +16,12 @@ const csvToJson = new Transform({
 
       const lines = leftover.split("\n");
 
-      // Keep incomplete line for the next chunk
       leftover = lines.pop();
 
       for (const line of lines) {
         if (!line.trim()) continue;
 
-        // First line = CSV headers
+    
         if (!headers) {
           headers = line.trim().split(",");
 

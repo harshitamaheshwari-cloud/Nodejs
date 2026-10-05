@@ -23,8 +23,6 @@ function myRequire(request, parentDir) {
   }
 
   const module = { exports: {} };
-
-  // Cache BEFORE running
   cache.set(file, module);
 
   const code = fs.readFileSync(file, "utf8");

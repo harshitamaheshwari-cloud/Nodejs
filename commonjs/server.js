@@ -1,8 +1,6 @@
 import http from "node:http";
 import { randomUUID } from "node:crypto";
 
-
-
 let users = [
   {
     id: "1",
@@ -17,9 +15,6 @@ let users = [
     role: "user"
   }
 ];
-
-
-
 
 const server = http.createServer(async (req, res) => {
   try {

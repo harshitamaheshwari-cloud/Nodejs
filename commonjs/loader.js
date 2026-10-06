@@ -2,9 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 
-
 const cache = new Map();
-
 
 function myRequire(request, parentDir) {
   let file = path.resolve(parentDir, request);
@@ -40,6 +38,4 @@ ${code}
 
   return module.exports;
 }
-
-
 export { myRequire };

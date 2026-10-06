@@ -1,9 +1,7 @@
 import fs from "node:fs";
 
 const file = fs.createWriteStream("./csvfiles/500mb.csv");
-
 file.write("name,email,role\n");
-
 let i = 1;
 let size = 0;
 const target = 500 * 1024 * 1024;
@@ -24,7 +22,6 @@ function write() {
     file.once("drain", write);
   } else {
     file.end();
-
     console.log(
       `Created ${(size / 1024 / 1024).toFixed(2)} MB`
     );
